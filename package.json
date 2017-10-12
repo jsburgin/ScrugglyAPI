@@ -1,0 +1,24 @@
+{
+  "name": "ScrugglyAPI",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jsburgin/ScrugglyAPI.git",
+  "author": "Josh and Sid",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index",
+    "start:dev": "nodemon src/index"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "nodemon": "^1.12.1"
+  }
+}
