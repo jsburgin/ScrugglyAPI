@@ -6,8 +6,9 @@
   "author": "Josh and Sid",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index",
-    "start:dev": "nodemon src/index"
+    "start:app": "concurrently -p [{name}] --names \"CLIENT,BACKEND\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start --prefix ScrugglyClient\" \"nodemon src/index\"",
+    "start:api": "nodemon src/index",
+    "setup:client": "git clone git@github.com:SidTheEngineer/ScrugglyClient.git && cd ScrugglyClient && yarn"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
