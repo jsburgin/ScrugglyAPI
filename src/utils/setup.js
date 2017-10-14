@@ -1,5 +1,5 @@
 const bodyParser = require('body-parser');
-const postgraphql = require('postgraphql');
+const { postgraphql } = require('postgraphql');
 const errorHandler = require('../middleware/errors');
 const configRoutes = require('../routes/config');
 
@@ -13,7 +13,7 @@ const configure = (app) => {
   app.set('port', port);
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
-  app.use(postgraphql);
+  app.use(postgraphql());
   configRoutes(app);
   app.use(errorHandler);
 };
