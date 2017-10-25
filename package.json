@@ -8,7 +8,7 @@
   "scripts": {
     "start:app": "concurrently -p [{name}] --names \"CLIENT,BACKEND\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start --prefix ScrugglyClient\" \"nodemon src/index\"",
     "start:api": "nodemon src/index",
-    "start:postgraphql": "postgraphql --watch --schema scruggly",
+    "start:db": "postgraphql --watch --schema scruggly",
     "setup:client": "git clone git@github.com:SidTheEngineer/ScrugglyClient.git && cd ScrugglyClient && yarn"
   },
   "dependencies": {
