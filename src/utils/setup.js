@@ -4,6 +4,9 @@ const errorHandler = require('../middleware/errors');
 const configRoutes = require('../routes/config');
 
 const port = process.env.PORT || '3000';
+const postgqlOptions = {
+  graphiql: true,
+};
 
 /**
  * initial app configuration
@@ -13,7 +16,7 @@ const configure = (app) => {
   app.set('port', port);
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
-  app.use(postgraphql());
+  app.use(postgraphql('postgres://localhost:5432', 'scruggly', postgqlOptions));
   configRoutes(app);
   app.use(errorHandler);
 };
