@@ -8,8 +8,8 @@
   "scripts": {
     "start:app": "concurrently -p [{name}] --names \"CLIENT,BACKEND\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm start --prefix ScrugglyClient\" \"nodemon src/index\"",
     "start:api": "nodemon src/index",
-    "db:migrate:up": "yarn db:migrate up",
-    "db:migrate:down": "yarn db:migrate down",
+    "db:migrate:up": "yarn db:migrate do",
+    "db:migrate:down": "yarn db:migrate undo",
     "db:migrate": "node src/db/scripts/migrate",
     "setup:client": "git clone git@github.com:SidTheEngineer/ScrugglyClient.git && cd ScrugglyClient && yarn"
   },
