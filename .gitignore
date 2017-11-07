@@ -42,3 +42,7 @@ node_modules/
 
 # Client
 ScrugglyClient
+
+# Config
+config/development.json
+config/production.json

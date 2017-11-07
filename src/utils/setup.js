@@ -1,7 +1,9 @@
 const bodyParser = require('body-parser');
+const passport = require('passport');
 const { postgraphql } = require('postgraphql');
 const errorHandler = require('../middleware/errors');
 const configRoutes = require('../routes/config');
+const auth = require('../auth');
 
 const port = process.env.PORT || '3000';
 const postgqlOptions = {
@@ -17,6 +19,12 @@ const configure = (app) => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
   app.use(postgraphql('postgres://localhost:5432', 'scruggly', postgqlOptions));
+
+  // initialize authentication
+  app.use(passport.initialize());
+  auth.init();
+
+  // configure routes and error handlers
   configRoutes(app);
   app.use(errorHandler);
 };
